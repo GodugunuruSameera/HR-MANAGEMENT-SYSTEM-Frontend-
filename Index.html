@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><title>HRPro | Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar"><h2>HR<span>Pro</span></h2>
+      <div class="nav-links">
+        <a href="index.html" class="active">Dashboard</a><a href="employees.html">Employees</a>
+        <a href="attendance.html">Attendance</a><a href="payroll.html">Payroll</a>
+        <a href="login.html" id="loginLink">Login</a><a href="#" id="logoutBtn" style="display:none;">Logout</a>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div style="background: var(--white); padding: 40px; border-radius: 8px; margin-bottom: 30px; border-left: 5px solid var(--accent); box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+      <h1 style="color: var(--primary); margin-bottom: 10px;">Welcome to the HR Portal</h1>
+      <p style="font-size: 1.1rem; color: #64748b;">Manage workforce, track attendance, and process payroll.</p>
+    </div>
+    <div class="dashboard-grid">
+      <div class="card" style="text-align: center;">
+        <h3>Total Employees</h3><h1 style="font-size: 3rem; color: var(--accent);" id="dashTotalEmp">0</h1>
+        <button onclick="window.location.href='employees.html'">View Directory</button>
+      </div>
+      <div class="card" style="text-align: center;">
+        <h3>Run Payroll</h3><p style="margin: 15px 0;">Generate salary slips.</p>
+        <button onclick="window.location.href='payroll.html'" style="background:var(--success);">Process</button>
+      </div>
+      <div class="card" style="text-align: center;">
+        <h3>Mark Attendance</h3><p style="margin: 15px 0;">Log daily statuses.</p>
+        <button onclick="window.location.href='attendance.html'" style="background:var(--primary);">Go</button>
+      </div>
+    </div>
+  </div>
+  <footer><p>© 2026 HRPro Management System.</p></footer>
+  <script src="js/data.js"></script><script src="js/auth.js"></script>
+  <script>document.getElementById("dashTotalEmp").innerText = (JSON.parse(localStorage.getItem("hr_employees")) || []).length;</script>
+</body>
+</html>
