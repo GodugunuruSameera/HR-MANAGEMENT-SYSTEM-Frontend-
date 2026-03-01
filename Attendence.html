@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><title>HRPro | Attendance</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar"><h2>HR<span>Pro</span></h2>
+      <div class="nav-links"><a href="index.html">Dashboard</a><a href="employees.html">Employees</a><a href="attendance.html" class="active">Attendance</a><a href="payroll.html">Payroll</a></div>
+    </div>
+  </header>
+  <div class="container" style="display:flex; gap:30px; flex-wrap:wrap;">
+    <div class="card" style="flex:1; min-width:300px; border-top: 4px solid var(--primary);">
+      <h3>📅 Mark Daily Attendance</h3>
+      <form id="attForm" onsubmit="markAttendance(event)">
+        <select id="attEmpSelect"></select>
+        <select id="attStatus"><option value="Present">Present</option><option value="Absent">Absent</option></select>
+        <button type="submit">Submit Record</button>
+      </form>
+    </div>
+    <div style="flex:2; min-width:300px;">
+      <h2 style="color:var(--primary);">Attendance Log</h2>
+      <div class="table-container">
+        <table>
+          <thead><tr><th>Date</th><th>Employee Name</th><th>Status</th></tr></thead>
+          <tbody id="attTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <footer><p>© 2026 HRPro.</p></footer>
+  <script src="js/data.js"></script><script src="js/attendance.js"></script><script src="js/auth.js"></script>
+</body>
+</html>
