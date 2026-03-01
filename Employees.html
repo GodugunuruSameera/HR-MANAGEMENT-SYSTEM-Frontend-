@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><title>HRPro | Employees</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar"><h2>HR<span>Pro</span></h2>
+      <div class="nav-links"><a href="index.html">Dashboard</a><a href="employees.html" class="active">Employees</a><a href="attendance.html">Attendance</a><a href="payroll.html">Payroll</a></div>
+    </div>
+  </header>
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
+      <h2 style="color: var(--primary);">Employee Directory</h2>
+      <div style="display: flex; gap: 10px; max-width: 400px;">
+        <input type="text" id="searchEmp" placeholder="Search ID/Name..." onkeyup="filterEmployees()">
+        <select id="filterDept" onchange="filterEmployees()"><option value="">All Depts</option><option value="Engineering">Engineering</option><option value="HR">HR</option><option value="Marketing">Marketing</option></select>
+      </div>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead><tr><th>EMP ID</th><th>Name</th><th>Dept</th><th>Role</th><th>Contact</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody id="empTableBody"></tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top: 40px; border-top: 4px solid var(--accent);">
+      <h3>➕ Onboard Employee</h3>
+      <form id="addEmpForm" onsubmit="addEmployee(event)">
+        <div class="form-grid">
+          <input type="text" id="empId" placeholder="Emp ID (e.g., EMP004)"><input type="text" id="empName" placeholder="Full Name">
+          <select id="empDept"><option value="Engineering">Engineering</option><option value="HR">HR</option><option value="Marketing">Marketing</option></select>
+          <input type="text" id="empRole" placeholder="Role"><input type="text" id="empPhone" placeholder="Phone">
+          <select id="empStatus"><option value="Active">Active</option><option value="Inactive">Inactive</option></select>
+        </div>
+        <button type="submit" style="width:200px;">Save Employee</button>
+      </form>
+    </div>
+  </div>
+  <footer><p>© 2026 HRPro Management System.</p></footer>
+  <script src="js/data.js"></script><script src="js/employees.js"></script><script src="js/auth.js"></script>
+</body>
+</html>
