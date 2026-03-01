@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>HRPro | Login</title><link rel="stylesheet" href="css/style.css"></head>
+<body style="justify-content:center; align-items:center;">
+  <div class="card" style="width: 100%; max-width: 400px; padding: 40px; border-top: 4px solid var(--accent);">
+    <h2 style="text-align:center; color:var(--primary); margin-bottom:20px;">Login</h2>
+    <form onsubmit="handleLogin(event)">
+      <input type="email" id="email" placeholder="Email Address">
+      <input type="password" id="password" placeholder="Password">
+      <button type="submit">Login</button>
+    </form>
+    <p style="text-align:center; margin-top:15px; font-size:0.9rem;">New here? <a href="signup.html" style="color:var(--accent);">Register</a></p>
+  </div>
+  <script src="js/auth.js"></script>
+</body>
+</html>
