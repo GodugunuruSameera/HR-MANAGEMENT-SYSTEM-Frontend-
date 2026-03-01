@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>HRPro | Register</title><link rel="stylesheet" href="css/style.css"></head>
+<body style="justify-content:center; align-items:center;">
+  <div class="card" style="width: 100%; max-width: 400px; padding: 40px; border-top: 4px solid var(--accent);">
+    <h2 style="text-align:center; color:var(--primary); margin-bottom:20px;">Register</h2>
+    <form onsubmit="handleSignup(event)">
+      <input type="text" id="name" placeholder="Full Name"><input type="email" id="email" placeholder="Email Address">
+      <input type="password" id="password" placeholder="Password"><input type="password" id="confirmPassword" placeholder="Confirm Password">
+      <select id="role"><option value="Employee">Employee</option><option value="HR">HR Admin</option></select>
+      <button type="submit">Create Account</button>
+    </form>
+    <p style="text-align:center; margin-top:15px; font-size:0.9rem;">Already have an account? <a href="login.html" style="color:var(--accent);">Login here</a></p>
+  </div>
+  <script src="js/auth.js"></script>
+</body>
+</html>
